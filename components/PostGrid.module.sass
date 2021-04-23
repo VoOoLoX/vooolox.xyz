@@ -1,0 +1,15 @@
+.post_grid
+    display: grid
+    padding: var(--horizontal-spacing) var(--horizontal-spacing)
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr 1fr
+    gap: var(--horizontal-spacing)
+    grid-template-areas: "latest latest" ".\ ."
+
+.latest
+    grid-area: latest
+
+@media screen and (max-width: 1300px)
+    .post_grid
+        grid-template-columns: 1fr
+        grid-template-areas: "latest" "."

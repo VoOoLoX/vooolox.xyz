@@ -1,0 +1,47 @@
+.post
+    display: grid
+    position: relative
+    background: #000000
+
+.post_header
+    position: relative
+    display: grid
+    place-items: center
+    min-height: 70vh
+
+    img
+        position: absolute
+        object-fit: cover
+        width: 100%
+        height: 100%
+
+    section
+        display: grid
+        place-items: center
+        text-align: center
+        position: absolute
+        align-self: end
+        font-size: 1.5em
+        padding: 5vh 0
+        width: 100%
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%)
+
+.post_content
+    margin: 20pt
+
+    img
+        width: 100%
+        height: auto
+
+    \:is(h1, h2, h3, h4, h5, h6)
+        margin: 10pt 0
+
+    \:is(ul, ol)
+        padding-left: 1ch
+
+    ul li::before
+        content: "\2022\00a0"
+        font-weight: bolder
+
+    ol li
+        list-style: decimal inside

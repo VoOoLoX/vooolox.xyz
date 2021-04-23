@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap')
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    overflow-x: hidden
+    font-family: 'Noto Sans', sans-serif
+    white-space: pre-wrap
+    font-weight: normal
+
+\:root
+    --horizontal-spacing: 2em
+    --navbar-height: 5em
+    --navbar-color: #00000050
+
+/* ### Various elements ### */
+h1, h2, h3, h4, h5, h6
+    display: flex
+    align-items: center
+
+hr
+    margin: 5pt 0
+
+pre
+    border-radius: 5pt
+    margin: 5pt
+
+blockquote
+    margin: 5pt
+    border-radius: 5pt
+    background: #1E1E1E
+    border-left: 10px solid #aaaaaa
+    padding: 1ch
+
+table
+    border-radius: 5pt
+    background: #1E1E1E
+    margin: 5pt
+
+th
+    padding: 10pt 5pt
+
+td
+    padding: 5pt
+
+/* ### Scrollbar ### */
+::-webkit-scrollbar
+    width: 10px
+    height: 10px
+
+::-webkit-scrollbar-thumb
+    background: #202020a0
+
+    &:hover
+        background: #252525a0
+
+::-webkit-scrollbar-track
+    background: transparent
+    border-radius: 0px
+
+@media only screen and (max-width: 320px)
+  /* Small screen, non-retina
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 320px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 320px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 320px), only screen and (min-device-pixel-ratio: 2) and (max-width: 320px), only screen and (min-resolution: 192dpi) and (max-width: 320px), only screen and (min-resolution: 2dppx) and (max-width: 320px)
+  /* Small screen, retina, stuff to override above media query
+
+@media only screen and (max-width: 700px)
+    \:root
+        --horizontal-spacing: 1em
+
+    ::-webkit-scrollbar
+        width: 0px
+        height: 0px
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 700px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 700px), only screen and (min-device-pixel-ratio: 2) and (max-width: 700px), only screen and (min-resolution: 192dpi) and (max-width: 700px), only screen and (min-resolution: 2dppx) and (max-width: 700px)
+    \:root
+        --horizontal-spacing: 1em
+
+    ::-webkit-scrollbar
+        width: 0px
+        height: 0px
+
+@media only screen and (max-width: 1300px)
+  /* Large screen, non-retina
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1300px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min-resolution: 192dpi) and (max-width: 1300px), only screen and (min-resolution: 2dppx) and (max-width: 1300px)
+  /* Large screen, retina, stuff to override above media query

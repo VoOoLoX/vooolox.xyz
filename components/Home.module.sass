@@ -1,0 +1,110 @@
+.home
+    display: flex
+    padding: 0 var(--horizontal-spacing)
+    height: calc(100vh - var(--navbar-height))
+
+.left
+    display: flex
+    width: 100%
+    height: 100%
+    font-size: 2em
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+
+.right
+    display: flex
+    height: 100%
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.hello
+    padding: 0.5ch 0
+
+.wave
+    transform-origin: bottom right
+    animation: wave 2s linear infinite alternate
+
+.intro
+    display: flex
+    padding-bottom: 0.5ch
+
+.work
+    cursor: pointer
+    color: #000
+    background: #fff
+    box-shadow: 10px 10px 0px 0px #a4a7a4
+    padding: 0 0.5em
+    border-radius: 0.1em
+    transition: 0.5s
+    text-decoration: none
+    &:hover
+        padding: 0 1em
+    &:focus
+        filter: none
+        outline: none
+        box-shadow: 10px 10px 0px 0px #333
+.name
+    cursor: pointer
+    font-weight: 700
+
+    background: linear-gradient(90deg, white 50%, #fff 0), linear-gradient(-90deg, white 50%, #fff 0), linear-gradient(90deg, transparent 50%, white 0), linear-gradient(-90deg, transparent 50%, white 0)
+    background-repeat: no-repeat
+    background-size: 200% 51%
+    background-position: top left, bottom right
+    -webkit-background-clip: text, text, padding-box, padding-box
+    background-clip: text, text, padding-box, padding-box
+    transition: 0.1s
+
+    &:hover
+        background-position: top right, bottom left
+        color: black
+
+@keyframes wave
+    0%
+        transform: rotate( 0.0deg)
+    10%
+        transform: rotate(14.0deg)
+    20%
+        transform: rotate(-8.0deg)
+    30%
+        transform: rotate(14.0deg)
+    40%
+        transform: rotate(-4.0deg)
+    50%
+        transform: rotate(10.0deg)
+    60%
+        transform: rotate( 0.0deg)
+    100%
+        transform: rotate( 0.0deg)
+
+.social
+    cursor: pointer
+    mix-blend-mode: screen
+    transition: 0.1s
+    text-decoration: none
+    color: #fff
+
+    &:hover
+        animation: glitch 0.05s linear
+        filter: drop-shadow(-2px 0 1px #00ff00) drop-shadow(0px 2px 1px #ff0000) drop-shadow(2px 0 1px #0000ff)
+
+    &:focus
+        outline: none
+        animation: glitch 0.05s linear
+        filter: drop-shadow(-2px 0 1px #00ff00) drop-shadow(0px 2px 1px #ff0000) drop-shadow(2px 0 1px #0000ff)
+
+@keyframes glitch
+    0%
+        transform: translate(0)
+    20%
+        transform: translate(-5px, 5px)
+    40%
+        transform: translate(-5px, -5px)
+    60%
+        transform: translate(5px, 5px)
+    80%
+        transform: translate(5px, -5px)
+    to
+        transform: translate(0)
