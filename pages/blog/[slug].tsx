@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = getAllPosts(['slug'])
+	const posts = getAllPosts(['slug', 'project'])
 
 	return {
 		paths:
