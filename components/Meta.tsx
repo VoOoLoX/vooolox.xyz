@@ -13,10 +13,10 @@ export default function Meta({ title, description }: MetaData): JSX.Element {
             <meta name='color-scheme' content='dark light' />
             <meta name='viewport' content='width=device-width, initial-scale=1' />
 
-            <link rel='icon' type='image/svg+xml' sizes='any' href='/favicon.svg?v=100' />
+            <link rel='icon' type='image/svg+xml' sizes='any' href={`/favicon.svg?v=${Math.random().toString(20).substr(2, 8)}`} />
 
-            <link rel='mask-icon' href='/safari-pinned-tab.svg?v=100' color='#272727' />
-            <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png?v=100' />
+            <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#272727' />
+            <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
 
             <meta name='msapplication-TileColor' content='#000000' />
             <meta name='theme-color' content='#000000' />
