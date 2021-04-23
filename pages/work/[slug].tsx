@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 
@@ -7,7 +7,7 @@ import Layout from '@components/Layout'
 import Navbar from '@components/Navbar'
 import Post from '@components/Post'
 
-import { getPostBySlug } from '@lib/api'
+import { getPostBySlug, getAllPosts } from '@lib/api'
 
 import { QueryParams, PostData } from '@lib/post'
 
@@ -27,7 +27,7 @@ export default function ProjectPost({ post }) {
 	)
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
 	var slug: string = ''
 
 	const params = context.params as QueryParams
@@ -53,5 +53,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 				content
 			} as PostData
 		}
+	}
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	const posts = getAllPosts(['slug'])
+
+	return {
+		paths:
+			posts
+				.filter(p => p.project == true)
+				.map(post => ({ params: { slug: post.slug } })),
+		fallback: false
 	}
 }

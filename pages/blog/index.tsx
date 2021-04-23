@@ -29,16 +29,16 @@ export default function Blog({ posts }): JSX.Element {
     )
 }
 
-// export const getStaticProps: GetStaticProps = async () => ({
-//     props: {
-//         posts: getAllPosts(['slug', 'title', 'description', 'author', 'coverImage', 'date', 'project'])
-//             .filter(p => p.project != true) as PostData[]
-//     }
-// })
-
-export const getServerSideProps: GetServerSideProps = async () => ({
+export const getStaticProps: GetStaticProps = async () => ({
     props: {
         posts: getAllPosts(['slug', 'title', 'description', 'author', 'coverImage', 'date', 'project'])
             .filter(p => p.project != true) as PostData[]
     }
 })
+
+// export const getServerSideProps: GetServerSideProps = async () => ({
+//     props: {
+//         posts: getAllPosts(['slug', 'title', 'description', 'author', 'coverImage', 'date', 'project'])
+//             .filter(p => p.project != true) as PostData[]
+//     }
+// })
