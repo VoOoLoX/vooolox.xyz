@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.4.3",
+    "remark-gfm": "^1.0.0"
+  },
+  "devDependencies": {
+    "@iconify/icons-mdi-light": "^1.1.0",
+    "@iconify/react": "^1.1.4"
+  }
+}
