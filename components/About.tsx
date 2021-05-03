@@ -14,8 +14,11 @@ export default function About(): JSX.Element {
     return (
         <div className={styles.home}>
             <div className={styles.left}>
+                <h1>Cool text</h1>
+            </div>
+            <div className={styles.right}>
                 <iframe name='hiddenIframe' id='hiddenIframe' style={{ display: 'none' }} />
-                <form action='https://docs.google.com/forms/u/0/d/e/1FAIpQLScJ_0qxaUpeM1maIvl4bKC7385EypsrBP1i4ksj7qg60_b-WQ/formResponse' method='post' target='hiddenIframe' onSubmit={e => submitForm(e)}>
+                <form className={styles.form} action='https://docs.google.com/forms/u/0/d/e/1FAIpQLScJ_0qxaUpeM1maIvl4bKC7385EypsrBP1i4ksj7qg60_b-WQ/formResponse' method='post' target='hiddenIframe' onSubmit={e => submitForm(e)}>
                     <h1>Send me a message</h1>
                     <label htmlFor='inputName'>Name</label>
                     <input type='text' id='inputName' name='entry.1240266346' />
@@ -31,9 +34,6 @@ export default function About(): JSX.Element {
 
                     <input type='submit' value='Send a message 📧' />
                 </form>
-            </div>
-            <div className={styles.right}>
-                <h1>Cool text</h1>
             </div>
         </div>
     )

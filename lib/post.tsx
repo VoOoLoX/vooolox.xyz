@@ -10,12 +10,6 @@ export interface PostData {
     content: string
 }
 
-// export type QueryParams = {
-//     params: {
-//         slug: string
-//     }
-// }
-
 export interface QueryParams extends ParsedUrlQuery {
     slug: string
 }

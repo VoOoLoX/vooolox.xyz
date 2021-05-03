@@ -68,7 +68,7 @@ export async function getAllPosts(): Promise<PostData[]> {
         } as PostData)
     }
 
-    return posts
+    return posts.sort((a, b) => (a.date > b.date ? -1 : 1))
 }
 
 export async function getPostBySlug(slug: string): Promise<PostData> {

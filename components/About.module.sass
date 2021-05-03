@@ -10,45 +10,46 @@
     width: 100%
     height: calc(100vh - var(--navbar-height))
 
-    form
-        display: flex
-        flex-direction: column
-        width: 80%
-
-        input, textarea
-            margin: 5pt 2pt 15pt 2pt
-            background: black
-            border: none
-            outline: none
-            border: 1px solid white
-            border-radius: 3px
-            padding: 10pt
-
-            &:focus
-                filter: invert(100%)
-
-            &[type=submit]
-                cursor: pointer
-                color: #000
-                background: #fff
-                box-shadow: 5px 5px 0px 0px #a4a7a4
-                margin: 1em 1.5em
-                padding: 1em
-                font-weight: 700
-                font-size: 1em
-                border-radius: 0.25em
-                transition: 0.5s
-                &:hover
-                    margin: 1em
-                &:focus
-                    filter: none
-                    box-shadow: 5px 5px 0px 0px #333
-        textarea
-            resize: vertical
-            max-height: 10em
-
 .right
     display: flex
+    align-items: center
     justify-content: center
     width: 100%
     height: calc(100vh - var(--navbar-height))
+
+.form
+    display: flex
+    flex-direction: column
+    width: 80%
+
+    input, textarea
+        margin: 5pt 2pt 15pt 2pt
+        background: black
+        border: none
+        outline: none
+        border: 1px solid white
+        border-radius: 3px
+        padding: 10pt
+
+        &:focus
+            filter: invert(100%)
+
+        &[type=submit]
+            cursor: pointer
+            color: #000
+            background: #fff
+            box-shadow: 5px 5px 0px 0px #a4a7a4
+            margin: 1em 1.5em
+            padding: 1em
+            font-weight: 700
+            font-size: 1em
+            border-radius: 0.25em
+            transition: 0.5s
+            &:hover
+                margin: 1em
+            &:focus
+                filter: none
+                box-shadow: 5px 5px 0px 0px #333
+        textarea
+            resize: vertical
+            max-height: 10em
