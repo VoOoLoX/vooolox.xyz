@@ -2,12 +2,12 @@ import { ParsedUrlQuery } from 'querystring'
 
 export interface PostData {
     slug: string
-    content: string
+    title?: string
     date: string
     project?: boolean
-    title?: string
-    coverImage?: string
     author?: string
+    coverImage?: string
+    content: string
 }
 
 // export type QueryParams = {

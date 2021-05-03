@@ -9,12 +9,12 @@ import Post from '@components/Post'
 
 import { getPostBySlug, getAllPosts } from '@lib/api'
 
-import { QueryParams, PostData } from '@lib/post'
+import { QueryParams } from '@lib/post'
 
 export default function ProjectPost({ post }) {
 	const router = useRouter()
 
-	if (!router.isFallback && !post?.slug) {
+	if (!router.isFallback && !post) {
 		return <ErrorPage statusCode={404} />
 	}
 
@@ -35,29 +35,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	if (params)
 		({ slug } = params)
 
-	const post = getPostBySlug(slug, [
-		'title',
-		'date',
-		'slug',
-		'author',
-		'content',
-		'coverImage',
-	])
-
-	const content = post.content || ''
-
 	return {
 		props: {
-			post: {
-				...post,
-				content
-			} as PostData
+			post: await getPostBySlug(slug)
 		}
 	}
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = getAllPosts(['slug', 'project'])
+	const posts = await getAllPosts()
 
 	return {
 		paths:
