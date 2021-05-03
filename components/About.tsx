@@ -18,22 +18,22 @@ export default function About(): JSX.Element {
                 <form action='https://docs.google.com/forms/u/0/d/e/1FAIpQLScJ_0qxaUpeM1maIvl4bKC7385EypsrBP1i4ksj7qg60_b-WQ/formResponse' method='post' target='hiddenIframe' onSubmit={e => submitForm(e)}>
                     <h1>Send me a message</h1>
                     <label htmlFor='inputName'>Name</label>
-                    <input type='text' id='inputName' name='entry.1240266346' placeholder='John Doe' />
+                    <input type='text' id='inputName' name='entry.1240266346' />
 
                     <label htmlFor='inputSubject'>Subject</label>
-                    <input type='text' id='inputSubject' name='entry.434626942' placeholder='Subject' />
+                    <input type='text' id='inputSubject' name='entry.434626942' />
 
                     <label htmlFor='inputEmail'>Email *</label>
-                    <input type='email' required id='inputEmail' name='entry.813806805' placeholder='johndoe@example.com' />
+                    <input type='email' required id='inputEmail' name='entry.813806805' />
 
                     <label htmlFor='inputMessage'>Message *</label>
-                    <textarea id='inputMessage' required name='entry.731434310' placeholder='Message'></textarea>
+                    <textarea id='inputMessage' required name='entry.731434310'></textarea>
 
                     <input type='submit' value='Send a message 📧' />
                 </form>
             </div>
             <div className={styles.right}>
-                {/* <h1>Cool text</h1> */}
+                <h1>Cool text</h1>
             </div>
         </div>
     )

@@ -1,17 +1,19 @@
 .home
     display: flex
-    align-items: center
+    flex-direction: var(--flex-direction)
     padding: 0 var(--horizontal-spacing)
-    height: calc(100vh - var(--navbar-height))
 
 .left
     display: flex
-    width: 50%
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: calc(100vh - var(--navbar-height))
 
     form
         display: flex
         flex-direction: column
-        width: 50%
+        width: 80%
 
         input, textarea
             margin: 5pt 2pt 15pt 2pt
@@ -30,17 +32,23 @@
                 color: #000
                 background: #fff
                 box-shadow: 5px 5px 0px 0px #a4a7a4
-                margin: 1em
+                margin: 1em 1.5em
                 padding: 1em
                 font-weight: 700
                 font-size: 1em
                 border-radius: 0.25em
                 transition: 0.5s
                 &:hover
-                    padding: 1.5em
+                    margin: 1em
                 &:focus
                     filter: none
                     box-shadow: 5px 5px 0px 0px #333
         textarea
             resize: vertical
             max-height: 10em
+
+.right
+    display: flex
+    justify-content: center
+    width: 100%
+    height: calc(100vh - var(--navbar-height))
