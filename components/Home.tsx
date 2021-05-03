@@ -5,8 +5,6 @@ import githubIcon from '@iconify/icons-mdi/github-circle'
 import instagramIcon from '@iconify/icons-mdi/instagram'
 import redditIcon from '@iconify/icons-mdi/reddit'
 
-import Typewriter from 'typewriter-effect'
-
 import Link from 'next/link'
 
 import styles from './Home.module.sass'
@@ -18,14 +16,9 @@ export default function Home(): JSX.Element {
         <div className={styles.home}>
             <div className={styles.left}>
                 <h1 className={styles.hello}><span className={styles.wave}>👋</span>Hello there!</h1>
-                <div className={styles.intro}>
-                    <h1 className={styles.intro_text}>I'm <Link href='/about'><span className={styles.name} data-text='Daniel'>Daniel</span></Link>, </h1>
-                    <h1 className={styles.profession}><Typewriter onInit={_ => { }} options={{
-                        strings: ['a developer', 'a content creator'],
-                        autoStart: true,
-                        loop: true
-                    }} /></h1>
-                </div>
+
+                <h1 className={styles.intro}>I'm <Link href='/about'><span className={styles.name}>Daniel</span></Link> &#123; web &amp; game developer &#125;</h1>
+
                 <Link href='/work'><a className={styles.work}><h1>Check out my work</h1></a></Link>
             </div>
             <div className={styles.right}>

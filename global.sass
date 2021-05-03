@@ -14,6 +14,9 @@
     --navbar-height: 5em
     --navbar-color: #00000050
     --flex-direction: row
+    --flex-direction-inverted: column
+    --home-font-size: 2em
+    --center-on-phone: flex-start
 
 /* ### Various elements ### */
 h1, h2, h3, h4, h5, h6
@@ -69,7 +72,7 @@ td
 @media only screen and (max-width: 700px)
     \:root
         --horizontal-spacing: 1em
-        --flex-direction: column
+        --home-font-size: 1.2em
 
     ::-webkit-scrollbar
         width: 0px
@@ -78,14 +81,20 @@ td
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 700px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 700px), only screen and (min-device-pixel-ratio: 2) and (max-width: 700px), only screen and (min-resolution: 192dpi) and (max-width: 700px), only screen and (min-resolution: 2dppx) and (max-width: 700px)
     \:root
         --horizontal-spacing: 1em
-        --flex-direction: column
+        --home-font-size: 1.2em
 
     ::-webkit-scrollbar
         width: 0px
         height: 0px
 
 @media only screen and (max-width: 1300px)
-  /* Large screen, non-retina
+    \:root
+        --flex-direction: column
+        --flex-direction-inverted: row
+        --center-on-phone: center
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1300px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min-resolution: 192dpi) and (max-width: 1300px), only screen and (min-resolution: 2dppx) and (max-width: 1300px)
-  /* Large screen, retina, stuff to override above media query
+    \:root
+        --flex-direction: column
+        --flex-direction-inverted: row
+        --center-on-phone: center
