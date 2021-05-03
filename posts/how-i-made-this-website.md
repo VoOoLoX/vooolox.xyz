@@ -1,5 +1,5 @@
 ---
-coverImage: /assets/cover.gif
+coverImage: /assets/noise.png
 title: How I made this website
 author: Daniel Vulić
 date: 2021-03-29 22:00
