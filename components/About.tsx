@@ -1,14 +1,14 @@
-import Link from 'next/link'
+import { FormEvent } from 'react'
 
 import styles from './About.module.sass'
 
 export default function About(): JSX.Element {
 
-    const submitForm = async e => {
+    const submitForm = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         var form = e.currentTarget
-        await form.submit()
-        await form.reset()
+        form.submit()
+        form.reset()
     }
 
     return (
@@ -32,7 +32,7 @@ export default function About(): JSX.Element {
                     <label htmlFor='inputMessage'>Message *</label>
                     <textarea id='inputMessage' required name='entry.731434310'></textarea>
 
-                    <input type='submit' value='Send a message 📧' />
+                    <input type='submit' value='Send message' />
                 </form>
             </div>
         </div>

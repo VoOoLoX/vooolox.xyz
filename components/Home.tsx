@@ -23,16 +23,16 @@ export default function Home(): JSX.Element {
             </div>
             <div className={styles.right}>
                 <Link href='https://www.youtube.com/channel/UCUFVgpl_VNTTahkCtuuaQgA'>
-                    <a className={styles.social} target='_blank'><Icon width={iconSize} height={iconSize} icon={youtubeIcon} /></a>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={youtubeIcon} /></a>
                 </Link>
                 <Link href='https://www.instagram.com/vooolox/'>
-                    <a className={styles.social} target='_blank'><Icon width={iconSize} height={iconSize} icon={instagramIcon} /></a>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={instagramIcon} /></a>
                 </Link>
                 <Link href='https://github.com/vooolox'>
-                    <a className={styles.social} target='_blank'><Icon width={iconSize} height={iconSize} icon={githubIcon} /></a>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={githubIcon} /></a>
                 </Link>
                 <Link href='https://www.reddit.com/user/vooolox'>
-                    <a className={styles.social} target='_blank'><Icon width={iconSize} height={iconSize} icon={redditIcon} /></a>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={redditIcon} /></a>
                 </Link>
             </div>
         </div>
