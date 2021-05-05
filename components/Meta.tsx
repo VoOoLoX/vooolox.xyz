@@ -16,8 +16,6 @@ export default function Meta({ title, description }: MetaData): JSX.Element {
 
             <link rel='icon' type='image/svg+xml' sizes='any' href={`/favicon.svg?v=${Math.random().toString(20).substr(2, 8)}`} />
 
-            <link rel='manifest' href='/manifest.json'></link>
-
             <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png'></link>
             <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#000000'></link>
 
