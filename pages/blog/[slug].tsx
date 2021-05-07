@@ -5,11 +5,11 @@ import ErrorPage from 'next/error'
 import Meta from '@components/Meta'
 import Layout from '@components/Layout'
 import Navbar from '@components/Navbar'
-import Post from '@components/Post'
+import PostPage from '@components/PostPage'
 
-import { getPostBySlug, getAllPosts } from '@lib/api'
+import { getPostBySlug, getAllPosts } from '@lib/API'
 
-import { QueryParams } from '@lib/post'
+import { QueryParams } from '@lib/Post'
 
 export default function BlogPost({ post }) {
 	const router = useRouter()
@@ -22,7 +22,7 @@ export default function BlogPost({ post }) {
 		<Layout>
 			<Meta title={`Daniel Vulić | ${post.title}`} />
 			<Navbar />
-			<Post post={post} />
+			<PostPage post={post} />
 		</Layout>
 	)
 }

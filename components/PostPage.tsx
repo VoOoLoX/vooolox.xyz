@@ -6,16 +6,16 @@ import { Icon } from '@iconify/react'
 import calendarIcon from '@iconify/icons-mdi/calendar'
 import accountIcon from '@iconify/icons-mdi/account'
 
-import { CodeBlockRenderer, ImageRenderer } from '@lib/utils'
-import { PostData } from '@lib/post'
+import { CodeBlockRenderer, ImageRenderer } from '@lib/Utils'
+import { PostData } from '@lib/Post'
 
-import styles from './Post.module.sass'
+import styles from '@styles/Post.module.sass'
 
 type PostProps = {
     post: PostData
 }
 
-export default function Post({ post }: PostProps): JSX.Element {
+export default function PostPage({ post }: PostProps): JSX.Element {
     const iconSize = 24
 
     return (

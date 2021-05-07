@@ -1,4 +1,4 @@
-import styles from './PostGrid.module.sass'
+import styles from '@styles/PostGrid.module.sass'
 
 export default function PostGrid({ projects = false, children }): JSX.Element {
     return (

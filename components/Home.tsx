@@ -7,7 +7,7 @@ import redditIcon from '@iconify/icons-mdi/reddit'
 
 import Link from 'next/link'
 
-import styles from './Home.module.sass'
+import styles from '@styles/Home.module.sass'
 
 export default function Home(): JSX.Element {
     const iconSize = 64

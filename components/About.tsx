@@ -1,6 +1,6 @@
 import { FormEvent } from 'react'
 
-import styles from './About.module.sass'
+import styles from '@styles/About.module.sass'
 
 export default function About(): JSX.Element {
 

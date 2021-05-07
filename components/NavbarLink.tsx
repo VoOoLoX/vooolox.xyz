@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 import Link from 'next/link'
 
-import styles from './NavbarLink.module.sass'
+import styles from '@styles/NavbarLink.module.sass'
 
 interface LinkData {
     href: string

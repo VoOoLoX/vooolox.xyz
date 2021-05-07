@@ -6,8 +6,8 @@ import Navbar from '@components/Navbar'
 import PostGrid from '@components/PostGrid'
 import PostPreview from '@components/PostPreview'
 
-import { getAllPosts } from '@lib/api'
-import { PostData } from '@lib/post'
+import { getAllPosts } from '@lib/API'
+import { PostData } from '@lib/Post'
 
 export default function Work({ posts }): JSX.Element {
     return (

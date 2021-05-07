@@ -42,7 +42,7 @@
 //     return posts
 // }
 
-import { PostData } from './post'
+import { PostData } from './Post'
 
 import matter from 'gray-matter'
 

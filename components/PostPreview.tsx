@@ -5,9 +5,9 @@ import accountIcon from '@iconify/icons-mdi/account'
 
 import Link from 'next/link'
 
-import { PostData } from '@lib/post'
+import { PostData } from '@lib/Post'
 
-import styles from './PostPreview.module.sass'
+import styles from '@styles/PostPreview.module.sass'
 
 type PostPreviewProps = {
     href: string

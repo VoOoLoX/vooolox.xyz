@@ -1,4 +1,4 @@
-import styles from './Layout.module.sass'
+import styles from '@styles/Layout.module.sass'
 
 export default function Layout({ children }): JSX.Element {
     return (

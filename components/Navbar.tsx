@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import NavbarLink from './NavbarLink'
 
-import styles from './Navbar.module.sass'
+import styles from '@styles/Navbar.module.sass'
 
 export default function Navbar(): JSX.Element {
     return (
