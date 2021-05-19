@@ -7,8 +7,21 @@
     display: flex
     align-items: center
     justify-content: center
+    flex-direction: var(--flex-direction-on-phone)
     width: 100%
     height: calc(100vh - var(--navbar-height))
+
+    div
+        text-align: var(--center-text-on-phone)
+        flex-direction: column
+        margin: 1em
+        h1, h2, h3
+            display: block
+
+    img
+        object-fit: contain
+        width: 50%
+        height: 50%
 
 .right
     display: flex
@@ -50,6 +63,7 @@
             &:focus
                 filter: none
                 box-shadow: 5px 5px 0px 0px #333
-        textarea
-            resize: vertical
-            max-height: 10em
+    textarea
+        resize: vertical
+        max-height: 10em
+        min-height: 3.5em

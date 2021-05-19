@@ -16,8 +16,10 @@
     --navbar-color: #00000050
     --flex-direction: row
     --flex-direction-inverted: column
+    --flex-direction-on-phone: row
     --home-font-size: 2em
-    --center-on-phone: flex-start
+    --center-on-tablet: flex-start
+    --center-text-on-phone: left
 
 html, body
     height: 100%
@@ -26,6 +28,9 @@ html, body
 h1, h2, h3, h4, h5, h6
     display: flex
     align-items: center
+
+b
+    font-weight: bold
 
 hr
     margin: 5pt 0
@@ -77,6 +82,8 @@ td
     \:root
         --horizontal-spacing: 1em
         --home-font-size: 1.2em
+        --flex-direction-on-phone: column
+        --center-text-on-phone: center
 
     ::-webkit-scrollbar
         width: 0px
@@ -86,6 +93,8 @@ td
     \:root
         --horizontal-spacing: 1em
         --home-font-size: 1.2em
+        --flex-direction-on-phone: column
+        --center-text-on-phone: center
 
     ::-webkit-scrollbar
         width: 0px
@@ -95,10 +104,10 @@ td
     \:root
         --flex-direction: column
         --flex-direction-inverted: row
-        --center-on-phone: center
+        --center-on-tablet: center
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1300px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1300px), only screen and (min-resolution: 192dpi) and (max-width: 1300px), only screen and (min-resolution: 2dppx) and (max-width: 1300px)
     \:root
         --flex-direction: column
         --flex-direction-inverted: row
-        --center-on-phone: center
+        --center-on-tablet: center

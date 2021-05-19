@@ -14,7 +14,16 @@ export default function About(): JSX.Element {
     return (
         <div className={styles.home}>
             <div className={styles.left}>
-                <h1>Cool text</h1>
+                <img src="/assets/me.jpg" alt="Me" />
+                <div>
+                    <h1>👋 Hey there!</h1>
+                    <h2>My name is <b>Daniel Vulić</b></h2>
+                    <hr />
+                    <h3>I'm an 💻 IT student creating 🎮 games, 📱 apps and ✨ much more.</h3>
+                    <hr />
+                    <h2>Want to hire me? Send me a message.</h2>
+                    <h1>Let's create awesome stuff together!</h1>
+                </div>
             </div>
             <div className={styles.right}>
                 <iframe name='hiddenIframe' id='hiddenIframe' style={{ display: 'none' }} />
@@ -30,7 +39,7 @@ export default function About(): JSX.Element {
                     <input type='email' required id='inputEmail' name='entry.813806805' />
 
                     <label htmlFor='inputMessage'>Message *</label>
-                    <textarea id='inputMessage' required name='entry.731434310'></textarea>
+                    <textarea id='inputMessage' required name='entry.731434310' rows={3}></textarea>
 
                     <input type='submit' value='Send message' />
                 </form>
