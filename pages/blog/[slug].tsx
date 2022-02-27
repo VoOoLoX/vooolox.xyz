@@ -27,7 +27,7 @@ export default function BlogPost({ post }) {
 	)
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = (context) => {
 	var slug: string = ''
 
 	const params = context.params as QueryParams
@@ -37,13 +37,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	return {
 		props: {
-			post: await getPostBySlug(slug)
+			post: getPostBySlug(slug)
 		}
 	}
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = await getAllPosts()
+export const getStaticPaths: GetStaticPaths = () => {
+	const posts = getAllPosts()
 
 	return {
 		paths:
@@ -53,32 +53,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		fallback: false
 	}
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-// 	var slug: string = ''
-
-// 	const params = context.params as QueryParams
-
-// 	if (params)
-// 		({ slug } = params)
-
-// 	const post = getPostBySlug(slug, [
-// 		'title',
-// 		'date',
-// 		'slug',
-// 		'author',
-// 		'content',
-// 		'coverImage',
-// 	])
-
-// 	const content = post.content || ''
-
-// 	return {
-// 		props: {
-// 			post: {
-// 				...post,
-// 				content
-// 			} as PostData
-// 		}
-// 	}
-// }

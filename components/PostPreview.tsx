@@ -20,7 +20,13 @@ export default function PostPreview({ href, post }: PostPreviewProps): JSX.Eleme
     return (
         <Link href={href} passHref>
             <article className={styles.post_preview}>
-                <img src={post.coverImage ? post.coverImage : `https://via.placeholder.com/512x512/202020/5000ff?text=${post.title}`} />
+                <img
+                    src={post.coverImage ? post.coverImage : `https://via.placeholder.com/1024x1024/2A4F70/BECBEE?text=${post.title}`}
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = `https://via.placeholder.com/1024x1024/2A4F70/BECBEE?text=${post.title}`;
+                    }}
+                />
                 <section>
                     <h2>{post.title}</h2>
                     <h4><Icon width={iconSize} height={iconSize} icon={accountIcon} /> {post.author}</h4>

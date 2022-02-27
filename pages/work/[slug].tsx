@@ -27,7 +27,7 @@ export default function ProjectPost({ post }) {
 	)
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = (context) => {
 	var slug: string = ''
 
 	const params = context.params as QueryParams
@@ -37,13 +37,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	return {
 		props: {
-			post: await getPostBySlug(slug)
+			post: getPostBySlug(slug)
 		}
 	}
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = await getAllPosts()
+export const getStaticPaths: GetStaticPaths = () => {
+	const posts = getAllPosts()
 
 	return {
 		paths:

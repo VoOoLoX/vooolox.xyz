@@ -1,4 +1,4 @@
-import { GetStaticProps, GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 import Meta from '@components/Meta'
 import Layout from '@components/Layout'
@@ -31,13 +31,6 @@ export default function Blog({ posts }): JSX.Element {
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        posts: (await getAllPosts()).filter(p => p.project != true) as PostData[]
+        posts: (getAllPosts()).filter(p => p.project != true) as PostData[]
     }
 })
-
-// export const getServerSideProps: GetServerSideProps = async () => ({
-//     props: {
-//         posts: getAllPosts(['slug', 'title', 'description', 'author', 'coverImage', 'date', 'project'])
-//             .filter(p => p.project != true) as PostData[]
-//     }
-// })

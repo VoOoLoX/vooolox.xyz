@@ -17,7 +17,7 @@ export default function Work({ posts }): JSX.Element {
             <Navbar />
 
             {posts.length > 0 ?
-                <PostGrid projects={true}>
+                <PostGrid>
                     {posts.map((post: PostData, i: number) => (
                         <PostPreview key={i} href={`/work/${post.slug}`} post={post} />
                     ))}
@@ -31,6 +31,6 @@ export default function Work({ posts }): JSX.Element {
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        posts: (await getAllPosts()).filter(p => p.project == true) as PostData[]
+        posts: (getAllPosts()).filter(p => p.project == true) as PostData[]
     }
 })
