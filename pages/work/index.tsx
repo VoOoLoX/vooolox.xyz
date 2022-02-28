@@ -12,7 +12,7 @@ import { PostData } from '@lib/Post'
 export default function Work({ posts }): JSX.Element {
     return (
         <Layout>
-            <Meta title='Daniel Vulić | My work' />
+            <Meta title='Daniel Vulić | My work' description='You can check out my projects here' />
 
             <Navbar />
 
@@ -23,7 +23,9 @@ export default function Work({ posts }): JSX.Element {
                     ))}
                 </PostGrid>
                 :
-                <h1 style={{ textAlign: 'center', justifyContent: 'center' }}>🚧 Nothing here, for now 🚧</h1>
+                <div style={{ height: 'calc(100vh - var(--navbar-height))', display: 'grid', alignItems: 'center' }}>
+                    <h1 style={{ textAlign: 'center', justifyContent: 'center', fontSize: '5em' }}>🚧 Nothing here, for now 🚧</h1>
+                </div>
             }
         </Layout >
     )
