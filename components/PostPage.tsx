@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
@@ -21,7 +23,17 @@ export default function PostPage({ post }: PostProps): JSX.Element {
     return (
         <article className={styles.post}>
             <header className={styles.post_header}>
-                <img src={post.coverImage ? post.coverImage : `https://via.placeholder.com/1024x1024/202020/5000ff?text=${post.title}`} />
+                <Image
+                    layout='fill'
+                    placeholder='blur'
+                    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEUgICD////DhhrRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=='
+                    alt={post.title}
+                    src={post.coverImage ? post.coverImage : `https://via.placeholder.com/1024x1024/2A4F70/BECBEE?text=${post.title}`}
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = `https://via.placeholder.com/1024x1024/2A4F70/BECBEE?text=${post.title}`;
+                    }}
+                />
                 <section>
                     <h2>{post.title}</h2>
                     <h4><Icon width={iconSize} height={iconSize} icon={accountIcon} /> {post.author}</h4>

@@ -4,6 +4,7 @@ import calendarIcon from '@iconify/icons-mdi/calendar'
 import accountIcon from '@iconify/icons-mdi/account'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { PostData } from '@lib/Post'
 
@@ -20,7 +21,11 @@ export default function PostPreview({ href, post }: PostPreviewProps): JSX.Eleme
     return (
         <Link href={href} passHref>
             <article className={styles.post_preview}>
-                <img
+                <Image
+                    layout='fill'
+                    placeholder='blur'
+                    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEUgICD////DhhrRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=='
+                    alt={post.title}
                     src={post.coverImage ? post.coverImage : `https://via.placeholder.com/1024x1024/2A4F70/BECBEE?text=${post.title}`}
                     onError={({ currentTarget }) => {
                         currentTarget.onerror = null;
