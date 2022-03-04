@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { FormEvent } from 'react'
 
 import styles from '@styles/About.module.sass'
@@ -14,7 +16,14 @@ export default function About(): JSX.Element {
     return (
         <div className={styles.home}>
             <div className={styles.left}>
-                <img src="/assets/me.jpg" alt="Me" />
+                <Image
+                    height={2225 / 6}
+                    width={1528 / 6}
+                    placeholder='blur'
+                    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEUgICD////DhhrRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=='
+                    alt='Daniel Vulić'
+                    src='/assets/me.webp'
+                />
                 <div>
                     <h1>👋 Hey there!</h1>
                     <h2>My name is <b>Daniel Vulić</b></h2>
