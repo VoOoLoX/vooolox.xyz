@@ -1,13 +1,22 @@
+import React, { lazy, Suspense } from 'react'
+
 import { GetStaticProps } from 'next'
+
+import { getAllPosts } from '@lib/API'
+import { PostData } from '@lib/Post'
 
 import Meta from '@components/Meta'
 import Layout from '@components/Layout'
 import Navbar from '@components/Navbar'
-import PostGrid from '@components/PostGrid'
 import PostPreview from '@components/PostPreview'
 
-import { getAllPosts } from '@lib/API'
-import { PostData } from '@lib/Post'
+const PostGrid = lazy(() => import('@components/PostGrid'))
+
+function PostGridLoader(): JSX.Element {
+    return (<div style={{ height: 'calc(100vh - var(--navbar-height))', display: 'grid', alignItems: 'center' }}>
+        <h1 style={{ textAlign: 'center', justifyContent: 'center', fontSize: '5em' }}>Loading...</h1>
+    </div>)
+}
 
 export default function Work({ posts }): JSX.Element {
     return (
@@ -17,11 +26,13 @@ export default function Work({ posts }): JSX.Element {
             <Navbar />
 
             {posts.length > 0 ?
-                <PostGrid>
-                    {posts.map((post: PostData, i: number) => (
-                        <PostPreview key={i} href={`/work/${post.slug}`} post={post} />
-                    ))}
-                </PostGrid>
+                <Suspense fallback={PostGridLoader()}>
+                    <PostGrid>
+                        {posts.map((post: PostData, i: number) => (
+                            <PostPreview key={i} href={`/work/${post.slug}`} post={post} />
+                        ))}
+                    </PostGrid>
+                </Suspense>
                 :
                 <div style={{ height: 'calc(100vh - var(--navbar-height))', display: 'grid', alignItems: 'center' }}>
                     <h1 style={{ textAlign: 'center', justifyContent: 'center', fontSize: '5em' }}>🚧 Nothing here, for now 🚧</h1>

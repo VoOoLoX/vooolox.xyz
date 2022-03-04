@@ -8,13 +8,13 @@
     "export": "cross-env NEXT_EXPORT=true next build && cross-env NEXT_EXPORT=true next export"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "^12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0-rc.1",
+    "react-dom": "^18.0.0-rc.1",
     "react-markdown": "^5.0.3",
     "react-syntax-highlighter": "15.4.3",
     "remark-gfm": "1.0.0",
-    "gray-matter": "^4.0.3",
     "sass": "1.32.8"
   },
   "devDependencies": {

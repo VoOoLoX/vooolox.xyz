@@ -1,15 +1,23 @@
+import React, { lazy, Suspense } from 'react'
+
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 
+import { getPostBySlug, getAllPosts } from '@lib/API'
+import { QueryParams } from '@lib/Post'
+
 import Meta from '@components/Meta'
 import Layout from '@components/Layout'
 import Navbar from '@components/Navbar'
-import PostPage from '@components/PostPage'
 
-import { getPostBySlug, getAllPosts } from '@lib/API'
+const PostPage = lazy(() => import('@components/PostPage'))
 
-import { QueryParams } from '@lib/Post'
+function PostPageLoader(): JSX.Element {
+	return (<div style={{ height: 'calc(100vh - var(--navbar-height))', display: 'grid', alignItems: 'center' }}>
+		<h1 style={{ textAlign: 'center', justifyContent: 'center', fontSize: '5em' }}>Loading...</h1>
+	</div>)
+}
 
 export default function BlogPost({ post }) {
 	const router = useRouter()
@@ -22,7 +30,9 @@ export default function BlogPost({ post }) {
 		<Layout>
 			<Meta title={`Daniel Vulić | ${post.title}`} />
 			<Navbar />
-			<PostPage post={post} />
+			<Suspense fallback={PostPageLoader()}>
+				<PostPage post={post} />
+			</Suspense>
 		</Layout>
 	)
 }
