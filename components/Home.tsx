@@ -1,7 +1,8 @@
 import { Icon } from '@iconify/react'
 
-import youtubeIcon from '@iconify/icons-mdi/youtube'
+import linkedinIcon from '@iconify/icons-mdi/linkedin'
 import githubIcon from '@iconify/icons-mdi/github-circle'
+import youtubeIcon from '@iconify/icons-mdi/youtube'
 import instagramIcon from '@iconify/icons-mdi/instagram'
 import redditIcon from '@iconify/icons-mdi/reddit'
 
@@ -22,14 +23,17 @@ export default function Home(): JSX.Element {
                 <Link href='/work'><a className={styles.work}><h1>Check out my work</h1></a></Link>
             </div>
             <div className={styles.right}>
+                <Link href='https://www.linkedin.com/in/vooolox'>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={linkedinIcon} /></a>
+                </Link>
+                <Link href='https://github.com/vooolox'>
+                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={githubIcon} /></a>
+                </Link>
                 <Link href='https://www.youtube.com/channel/UCUFVgpl_VNTTahkCtuuaQgA'>
                     <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={youtubeIcon} /></a>
                 </Link>
                 <Link href='https://www.instagram.com/vooolox/'>
                     <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={instagramIcon} /></a>
-                </Link>
-                <Link href='https://github.com/vooolox'>
-                    <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={githubIcon} /></a>
                 </Link>
                 <Link href='https://www.reddit.com/user/vooolox'>
                     <a className={styles.social} target='_blank' rel='noreferrer'><Icon width={iconSize} height={iconSize} icon={redditIcon} /></a>
