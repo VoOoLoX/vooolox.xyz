@@ -1,0 +1,104 @@
+<div
+  id="blob"
+  class="flex overflow-hidden items-center justify-center w-[70%] lg:w-[40%] aspect-square bg-gradient-to-br from-[#00ff66] to-[#500ba9] rounded-[58%_42%_68%_32%_/_41%_65%_35%_59%]"
+>
+  <img class="h-full scale-[1.15]" src="selfie.webp" alt="Daniel Vulic" />
+</div>
+
+<script>
+  const blob = document.getElementById("blob") as HTMLDivElement;
+  const speed = 0.025;
+
+  const random = (min: number, max: number) =>
+    Math.floor(Math.random() * (max - min)) + min;
+
+  let top = random(30, 70);
+  let right = random(30, 70);
+  let bottom = random(30, 70);
+  let left = random(30, 70);
+  let topDirection = 1;
+  let rightDirection = 1;
+  let bottomDirection = 1;
+  let leftDirection = 1;
+
+  let topInterval = setInterval(
+    () => {
+      topDirection *= -1;
+    },
+    random(5000, 15000)
+  );
+  let rightInterval = setInterval(
+    () => {
+      rightDirection *= -1;
+    },
+    random(5000, 15000)
+  );
+  let bottomInterval = setInterval(
+    () => {
+      bottomDirection *= -1;
+    },
+    random(5000, 15000)
+  );
+  let leftInterval = setInterval(
+    () => {
+      leftDirection *= -1;
+    },
+    random(5000, 15000)
+  );
+
+  const animate = () => {
+    top += topDirection * speed;
+    right += rightDirection * speed;
+    bottom += bottomDirection * speed;
+    left += leftDirection * speed;
+    if (top < 30 || top > 70) {
+      topDirection *= -1;
+      clearTimeout(topInterval);
+      topInterval = setInterval(
+        () => {
+          topDirection *= -1;
+        },
+        random(5000, 15000)
+      );
+    }
+    if (right < 30 || right > 70) {
+      rightDirection *= -1;
+      clearTimeout(rightInterval);
+      rightInterval = setInterval(
+        () => {
+          rightDirection *= -1;
+        },
+        random(5000, 15000)
+      );
+    }
+    if (bottom < 30 || bottom > 70) {
+      bottomDirection *= -1;
+      clearTimeout(bottomInterval);
+      bottomInterval = setInterval(
+        () => {
+          bottomDirection *= -1;
+        },
+        random(5000, 15000)
+      );
+    }
+    if (left < 30 || left > 70) {
+      leftDirection *= -1;
+      clearTimeout(leftInterval);
+      leftInterval = setInterval(
+        () => {
+          leftDirection *= -1;
+        },
+        random(5000, 15000)
+      );
+    }
+
+    if (blob) {
+      blob.style.borderRadius = `${top}% ${100 - top}% ${bottom}% ${
+        100 - bottom
+      }% / ${100 - left}%  ${right}% ${100 - right}% ${left}%`;
+    }
+    requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+</script>

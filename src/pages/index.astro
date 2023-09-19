@@ -1,0 +1,46 @@
+---
+import Blob from "../components/Blob.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <main
+    class="flex flex-col-reverse p-4 justify-between items-center h-full overflow-hidden lg:flex-row container"
+  >
+    <div
+      class="flex flex-1 flex-col justify-center items-center gap-4 text-center lg:items-start lg:gap-16 lg:text-left"
+    >
+      <h1
+        class="text-[3rem]/[3rem] sm:text-[4rem]/[4rem] lg:text-[6rem]/[6rem] text-white font-light [text-shadow:0_0_16px_rgba(0_0_0_/_50%)]"
+      >
+        hello there
+      </h1>
+      <div class="flex flex-col items-center gap-4 lg:items-start">
+        <p
+          class="text-[1.5rem]/[1.5rem] sm:text-[2rem]/[2rem] lg:text-[3rem]/[3rem] text-white font-light [text-shadow:0_0_16px_rgba(0_0_0_/_50%)]"
+        >
+          <span>my name&rsquo;s&nbsp;</span>
+          <span class="font-bold">Daniel Vulić</span>
+          <br />
+          <span>i&rsquo;m a web & game developer</span>
+        </p>
+      </div>
+      <a
+        target="_blank"
+        href="mailto:contact@vooolox.xyz"
+        class="relative flex before:transition-opacity before:absolute before:w-full before:h-full before:rounded-lg before:hover:opacity-0 before:bg-transparent before:border-8 before:border-white"
+      >
+        <div
+          class="flex p-1 bg-white rounded-lg bg-gradient-to-br from-[#00ffa2] to-[#5e3ea2]"
+        >
+          <p
+            class="text-[1.5rem]/[1.5rem] sm:text-[2rem]/[2rem] lg:text-[3rem]/[3rem] text-black font-light [text-shadow:0_0_16px_rgba(0_0_0_/_50%)] shadow-lg whitespace-nowrap bg-white w-min p-2 sm:p-4 rounded-lg"
+          >
+            get in touch
+          </p>
+        </div>
+      </a>
+    </div>
+    <Blob />
+  </main>
+</MainLayout>
