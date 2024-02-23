@@ -1,7 +1,7 @@
 {
-  "name": "website",
+  "name": "vooolox.xyz",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,10 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.0",
-    "@fingerprintjs/fingerprintjs": "^4.1.0",
-    "astro": "^3.1.0",
-    "mixpanel-browser": "^2.47.0",
-    "tailwindcss": "^3.3.3"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.4.4",
+    "tailwindcss": "^3.4.1"
   }
 }

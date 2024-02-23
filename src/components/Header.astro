@@ -1,11 +1,76 @@
-<header class="z-10 flex justify-center w-full py-4">
+<header
+  class="relative z-10 flex justify-center w-full bg-black/30 backdrop-blur-2xl border-b border-b-black/30 hover:before:opacity-100 before:content-[''] before:h-full before:opacity-0 before:absolute before:transition-opacity before:duration-500 before:w-full before:rounded-[inherit] before:left-0 before:top-0 before:[background:radial-gradient(_800px_circle_at_var(--mouse-x)_var(--mouse-y),var(--color),transparent_40%_)] before:z-10"
+>
   <nav
-    class="flex container px-4 items-center justify-between text-xl text-white font-light [text-shadow:0_0_16px_rgba(0_0_0_/_50%)]"
+    class="flex container px-4 py-4 items-center justify-between gap-8 text-xl text-white font-light [text-shadow:0_0_16px_rgba(0_0_0_/_50%)] z-20"
   >
-    <a class="flex flex-1 justify-start"></div>
-    <a class="flex flex-1 justify-center" href="/">
-      <img src="/header-logo.svg" alt="Logo" height={64} />
-    </a>
-    <a class="flex flex-1 justify-end" target="_blank" href="mailto:contact@vooolox.xyz">contact me</a>
+    <div class="flex flex-1"></div>
+    <img src="/header-logo.svg" alt="Logo" height={64} />
+    <div class="flex flex-1 justify-end">
+      <a
+        class="group hover:text-[#00ff66] transition duration-300"
+        target="_blank"
+        href="mailto:contact@vooolox.xyz"
+      >
+        contact me
+        <span
+          class="block w-full max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#00ff66]"
+        >
+        </span>
+      </a>
+    </div>
   </nav>
 </header>
+
+<script>
+  const header = document.querySelector("header");
+  header.addEventListener("mousemove", (e) => {
+    const rect = header.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+    const colorHorizontal = interpolateColor(
+      hexToRgb("#00ff66"),
+      hexToRgb("#500ba9"),
+      mapToRnage(0, rect.width, 0, 1)(x)
+    );
+    const color = interpolateColor(
+      hexToRgb("#000000"),
+      colorHorizontal,
+      mapToRnage(0, rect.height, 0, 1)(y)
+    );
+    header.style.setProperty("--mouse-x", `${x}px`);
+    header.style.setProperty("--mouse-y", `${y}px`);
+    header.style.setProperty(
+      "--color",
+      `rgba(${color[0]},${color[1]},${color[2]},0.25)`
+    );
+  });
+
+  const mapToRnage =
+    (inMin: number, inMax: number, outMin: number, outMax: number) =>
+    (x: number) =>
+      ((x - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+
+  const hexToRgb = (hex: string): number[] => {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+      ? [
+          parseInt(result[1], 16),
+          parseInt(result[2], 16),
+          parseInt(result[3], 16),
+        ]
+      : null;
+  };
+
+  const interpolateColor = (
+    color1: number[],
+    color2: number[],
+    factor = 0.5
+  ) => {
+    var result = color1.slice();
+    for (var i = 0; i < 3; i++) {
+      result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+    }
+    return result;
+  };
+</script>

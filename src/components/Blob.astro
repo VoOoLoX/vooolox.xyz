@@ -1,13 +1,19 @@
 <div
   id="blob"
-  class="flex overflow-hidden items-center justify-center w-[70%] lg:w-[40%] aspect-square bg-gradient-to-br from-[#00ff66] to-[#500ba9] rounded-[58%_42%_68%_32%_/_41%_65%_35%_59%]"
+  class="flex overflow-hidden items-center justify-center w-[70%] lg:w-[40%] aspect-square bg-gradient-to-br from-[#00ff66] to-[#500ba9] rounded-full scale-0 group-[loaded]:scale-100 transition-transform duration-1000"
 >
-  <img class="h-full scale-[1.15]" src="selfie.webp" alt="Daniel Vulic" />
+  <img
+    class="h-full scale-[1.2]"
+    loading="eager"
+    decoding="async"
+    src="selfie.webp"
+    alt="Daniel Vulic"
+  />
 </div>
 
 <script>
   const blob = document.getElementById("blob") as HTMLDivElement;
-  const speed = 0.025;
+  const speed = 0.035;
 
   const random = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min)) + min;
